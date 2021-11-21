@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>披薩口味調查</title>
+    </head>
+    <body>
+        <form action="test.php" method="post">
+        <fieldset>
+            <legend>個資</legend>
+            <p>姓名:<input type="text" name="UserName" size="50"></p>
+            <p>E-mail:<input type="text" name="Email" size="50"></p>
+            <p>國籍:<input type="radio" name="country" value="taiwan">台灣
+                <input type="radio" name="country" value="italy">義大利
+                <input type="radio" name="country" value="else">其他
+            </p>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>口味調查</legend>
+            <p>您最喜歡的披薩口味<select name="favor[]" size="1">
+                <option value="夏威夷披薩">夏威夷披薩</option>
+                <option value="鳳梨披薩">鳳梨披薩</option>
+                <option value="鳳梨火腿披薩">鳳梨火腿披薩</option>
+                <option value="生鳳梨火腿披薩">生鳳梨火腿披薩</option>    
+                </select></p>
+            <p>平均每月吃幾次:<input type="radio" name="times" value="50">0~50次
+                <input type="radio" name="times" value="數不清">多到數不清
+            </p>
+            <p>改進的方向</p>
+            <textarea name="advice" row="10"></textarea>
+        </fieldset>
+        <input type="submit" value="送出表單">
+        <input type="reset" value="重新輸入">
+        </form>
+    </body>
+</html>
