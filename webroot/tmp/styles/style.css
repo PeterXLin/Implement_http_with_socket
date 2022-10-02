@@ -1,0 +1,40 @@
+html {
+  margin: 10px 2% 0px 2%;
+}
+.top_part {
+  height: 200px;
+  width: 100%;
+  background-color: purple;
+}
+#title {
+  text-align: center;
+  font-size: 72;
+  color: yellow;
+}
+.left-part {
+  float: left;
+  width: 25%;
+  height: 1000px;
+}
+.left-img {
+  width: 100%;
+  margin: 10px 0px 0px 0px;
+}
+#lefttext {
+  width: 100%;
+  font-size: 20px;
+  text-align: center;
+}
+.right-part {
+  float: right;
+  width: 70%;
+  height: 1000px;
+}
+.right-title {
+}
+.right-text {
+  font-size: 22px;
+}
+ul {
+  line-height: 2;
+}

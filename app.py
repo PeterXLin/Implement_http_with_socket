@@ -28,6 +28,10 @@ class Request():
         """return client request protocol(HTTP version)"""
         return self._request.splitlines()[0].split()[2]
 
+    @property
+    def body(self):
+        return self._request.splitlines()[-1]
+
 
 class Response():
     def ok(self, mime_type=b'text/plain', body=b'Hello World'):
@@ -43,7 +47,7 @@ class Response():
 
 
 def check_request_method(request_method):
-    avaliable_method = ['GET']
+    avaliable_method = ['GET', 'POST']
     if request_method not in avaliable_method:
         raise NotImplementedError
 
@@ -68,8 +72,13 @@ def HTTP_request_handler(request):
     # print(_request.path)
     try:
         check_request_method(_request.method)
-        mime_type, content = get_response_content(_request.path)
-        return _response.ok(mime_type, content)
+        if _request.method == "GET":
+            mime_type, content = get_response_content(_request.path)
+            return _response.ok(mime_type, content)
+        elif _request.method == "POST":
+            # print HTTP request body
+            print(_request.body)
+            return _response.ok(b'text/plain', b'Data Received')
     except NotImplementedError:
         return _response.method_not_allowed
     except NameError:

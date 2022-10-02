@@ -8,7 +8,7 @@ def listening(client_conn):
     # non persistent http
     try:
         client_request = client_conn.recv(1024).decode('utf-8')
-        print(client_request)
+        # print(client_request)
         # * fot testing
         response = app.HTTP_request_handler(client_request)
         # already byte string
@@ -20,7 +20,7 @@ def listening(client_conn):
 
 
 class Server:
-    def __init__(self, host='127.0.0.1', port: int = 8080):
+    def __init__(self, host='140.115.200.237', port: int = 8080):
         self.server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.server_socket.setsockopt(
             socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
